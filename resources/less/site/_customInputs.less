@@ -1,0 +1,173 @@
+// -------------------- input type=text --------------------
+.inputText {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	border: 1px solid @inputBorderColor;
+	background-color: #fff;
+	border-radius: 2px;
+	height: 40px;
+	font-size: 14px;
+	color: #191919;
+	margin-bottom: 10px;
+	padding: 0 15px;
+
+	&.error {
+		border: 1px solid #921a1c;
+	}
+
+	.md-block( {
+			font-size: 10px;
+			padding: 0 6px;
+			height: 30px;
+			margin-bottom: 5px;
+		}
+
+	);
+}
+
+// -------------------- select --------------------
+
+.select {
+	box-sizing: border-box;
+	border: 1px solid @inputBorderColor;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	height: 40px;
+	position: relative;
+	.noselect();
+
+	&-active {
+		overflow: initial;
+		border: none;
+	}
+
+	&.error {
+		border: 1px solid #921a1c;
+	}
+
+	.md-block( {
+			height: 30px;
+			margin-bottom: 5px;
+		}
+
+	);
+}
+
+.select__wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-radius: 2px;
+	max-height: 145px;
+	z-index: 1;
+
+	.md-block({
+		max-height: 123px;
+	});
+}
+
+.select-active .select__wrapper {
+	border: 1px solid @inputBorderColor;
+	box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.6);
+	overflow-y: auto;
+	z-index: 100;
+
+	& :last-child {
+		border: none;
+	}
+}
+
+.select__item {
+	line-height: 35px;
+	font-size: 14px;
+	color: rgba(25, 25, 25, 0.5);
+	background-color: #fff;
+	padding: 0 15px;
+	border: none;
+	cursor: pointer;
+	.noselect();
+
+	&-first::after {
+		content: "";
+		background: url('/img/select_arrow.png') no-repeat center;
+		background-size: 14px 8px;
+		position: absolute;
+		width: 14px;
+		height: 40px;
+		right: 15px;
+		cursor: pointer;
+
+		.md-block( {
+			background-size: 10px 5px;
+			height: 30px;
+			right: 5px;
+		}
+
+	);
+	}
+
+	&-active {
+		color: #191919;
+	}
+
+	.md-block( {
+			font-size: 10px;
+			line-height: 30px;
+			padding: 0 6px;
+		}
+
+	);
+}
+
+.select-active .select__item-first::after {
+	transform: rotate(180deg);
+}
+
+.select-active .select__item {
+	border-bottom: 1px solid @inputBorderColor;
+}
+
+// -------------------- checkbox --------------------
+
+.checkbox {
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border: 1px solid @inputBorderColor;
+	border-radius: 3px;
+	background-color: #fff;
+	cursor: pointer;
+	.noselect();
+
+
+	&.error {
+		border: 1px solid #921a1c;
+	}
+
+	&__check {
+		position: absolute;
+		max-width: initial;
+		width: 22px;
+		height: 22px;
+		left: -1px;
+		bottom: -3px;
+		display: none;
+		color: #191919;
+	}
+
+	&__native {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+
+	}
+
+	&__native:checked~&__check {
+		display: block;
+	}
+}

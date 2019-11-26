@@ -1,0 +1,155 @@
+.reset();
+
+#noscript {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	color: red;
+	background-color: #000;
+	padding: 15px;
+	font-size: 24px;
+}
+
+html,
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #f0f0f0;
+	background-color: #f1f7ff;
+}
+
+button {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #f0f0f0;
+}
+
+.wrapper {
+	.wrapper();
+}
+
+.logo {
+	width: 56px;
+	height: 28px;
+}
+
+.controlBlock {
+	display: flex;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+
+	.md-block( {
+			border-radius: 0;
+			padding: 10px;
+		}
+
+	);
+}
+
+.page__head,
+.page__subhead {
+	text-align: center;
+	color: #2e2e2e;
+}
+
+.page__head {
+	font-size: 30px;
+	font-weight: bold;
+	padding: 80px 15px 15px 15px;
+
+	.md-block( {
+			font-size: 16px;
+			padding: 40px 15px 10px 15px;
+		}
+
+	);
+}
+
+.page__subhead {
+	font-size: 18px;
+	margin-bottom: 30px;
+
+	.md-block( {
+			font-size: 12px;
+			margin-bottom: 20px;
+		}
+
+	);
+}
+
+.button {
+	font-size: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 38px;
+	border-radius: 5px;
+	padding: 0 20px;
+	text-align: center;
+	cursor: pointer;
+	.noselect();
+
+	.md-block( {
+			line-height: 28px;
+			font-size: 10px;
+		}
+
+	);
+}
+
+.button-ok {
+	border: 1px solid #002c4c;
+	background-color: #004a80;
+	color: #fffefe;
+}
+
+.button-cancel {
+	border: 1px solid #bfcee5;
+	background-color: #f1f7ff;
+	color: #2e2e2e;
+}
+
+.groupNotFound {
+	text-align: center;
+	color: #2e2e2e;
+	margin-bottom: 25px;
+}
+
+.mob-no{
+	.md-block({
+		display: none;
+	});
+}
+
+.m-auto{
+	margin: auto;
+}
+
+//-------------------- переключатели моб --------------------
+.switcher {
+	display: none;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+
+	.md-block( {
+			display: flex;
+		}
+
+	);
+}
+
+.switcherCase {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 10px;
+	border: 1px solid #8fa7c9;
+	background-color: #bfcee5;
+	cursor: pointer;
+	.noselect();
+
+	&.active {
+		background-color: #8fa7c9;
+	}
+}

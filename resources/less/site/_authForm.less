@@ -1,0 +1,59 @@
+.auth {
+	// display: none;
+	&__rememberBlock {
+		display: flex;
+		margin-bottom: 10px;
+		align-items: center;
+	}
+
+	&__remember {
+		margin-right: 5px;
+		flex-shrink: 0;
+	}
+
+	&__rememberText {
+		font-size: 11px;
+		color: #545454;
+	}
+
+	&__next {
+		width: 100%;
+	}
+}
+
+.forgot {
+	display: none;
+
+	&__stage{
+		display: none;
+
+		&-active{
+			display: block;
+		}
+	}
+
+	&__buttons{
+		display: flex;
+	}
+	&__prev{
+		margin-right: 10px;
+		display: none;
+	}
+
+	&__mess {
+		color: #545454;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	&__next {
+		width: 100%;
+	}
+
+	&__auth,
+	&__reg {
+		font-size: 11px;
+		color: #545454;
+		cursor: pointer;
+	}
+}

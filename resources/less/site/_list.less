@@ -1,0 +1,786 @@
+.list {
+	padding-bottom: 120px;
+
+	.wrapper {
+		.md-block( {
+				padding: 0;
+				margin: 0;
+				max-width: 992px;
+			}
+
+		);
+	}
+
+	&__search {
+		border: 1px solid #708eb9;
+		background-color: #8fa7c9;
+
+		.md-block( {
+				border-left: none;
+				border-right: none;
+				margin-bottom: 10px;
+			}
+
+		);
+	}
+
+	&__periodHead {
+		display: none;
+		text-align: center;
+		color: #2e2e2e;
+		font-size: 18px;
+		text-transform: uppercase;
+
+		.md-block( {
+				display: block;
+				font-size: 12px;
+			}
+
+		);
+	}
+
+	// ----------------------------- FILTER -----------------------------
+	&__filter {
+		border: 1px solid #8fa7c9;
+		background-color: #bfcee5;
+
+		.md-block( {
+				border: none;
+				background: none;
+				margin: 0;
+			}
+
+		);
+	}
+
+	&__filterBlock {
+		display: flex;
+
+		&.mob {
+			width: 100%;
+			justify-content: space-between;
+
+			.list__filterVal{
+				max-width: 1000px;//на всю ширину
+			}
+		}
+	}
+
+	&__filterData,
+	&__filterSign,
+	&__filterVal {
+		margin: 0 10px 0 0;
+		display: none;
+
+		.md-block( {
+				margin: 0 5px 0 0;
+			}
+
+		);
+	}
+
+	&__filterData {
+		width: 240px;
+		min-width: 240px;
+
+		.md-block( {
+				min-width: 128px;
+			}
+
+		)
+	}
+
+	// &__filterVal {
+	// }
+
+	&__filterBlockFIO &__filterVal,
+	&__filterBlockDay &__filterVal {
+		max-width: 148px;
+	}
+
+	&__filterBlockSkips &__filterVal {
+		max-width: 102px;
+	}
+
+	&__filterSign {
+		width: 36px;
+		min-width: 36px;
+
+		.select__wrapper {
+			overflow: initial;
+			max-height: 300px;
+		}
+
+		.select__item-first {
+			font-size: 0;
+
+			&::after {
+				right: 10px;
+			}
+		}
+
+		&.select-active .select__item-first {
+			&::after {
+				top: 0px;
+			}
+		}
+	}
+
+	&__filterSign.active {
+		.select__item-first {
+			font-size: 14px;
+			color: #191919;
+			padding: 0;
+			text-align: center;
+
+			&::after {
+				background-image: none;
+			}
+		}
+	}
+
+	&__group,
+	&__institution,
+	&__filterMode,
+	&__filterData,
+	&__period {
+		width: 240px;
+
+		.md-block( {
+				width: 128px;
+			}
+
+		);
+	}
+
+	&__group,
+	&__filterMode {
+		margin: 0;
+	}
+
+	&__filterMode {
+		flex-shrink: 0;
+		margin-right: 10px;
+
+		.md-block( {
+				margin-right: 5px;
+			}
+
+		);
+	}
+
+	&__institution {
+		margin: 0 10px;
+		flex-shrink: 0;
+
+		.md-block( {
+				margin: 0 5px;
+			}
+
+		)
+	}
+
+	//моб кнопки фильтра
+	&__filterOK,
+	&__filterCancel {
+		display: none;
+		width: 30px;
+		border-radius: 5px;
+		cursor: pointer;
+		.noselect();
+	}
+
+	&__filterCancel {
+		margin-right: 5px;
+	}
+
+	//-------------------------------------------------------------------
+	&__edit {
+		border: 1px solid #bfcee5;
+		background-color: #cedaea;
+
+		.md-block( {
+				margin-bottom: 0;
+			}
+
+		);
+	}
+
+	&__submit {
+		height: 40px;
+		border-radius: 5px;
+		flex-basis: 240px;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+	&__editCancel,
+	&__editSubmit {
+		display: none;
+	}
+
+	&__searchSubmit,
+	&__filterSubmit {
+		margin-left: auto;
+	}
+
+	&__editEdit,
+	&__sendSubmit {
+		flex-basis: 135px;
+		margin-right: 10px;
+
+		.md-block( {
+				margin-right: 5px;
+			}
+
+		);
+	}
+
+	&__filterSubmit {
+		max-width: 240px;
+	}
+
+	&__filterSubmit,
+	&__editEdit,
+	&__editCancel,
+	&__editSubmit,
+	&__sendSubmit,
+	&__exelExport {
+		.md-block( {
+				font-size: 0;
+				height: 30px;
+				flex-basis: 30px;
+				width: 30px;
+			}
+
+		);
+	}
+
+	&__editSubmit {
+		margin-left: 10px;
+	}
+
+	&__period {
+		margin: 0 10px 0 0;
+
+		.md-block( {
+				margin: 0 5px 0 0;
+			}
+
+		);
+	}
+
+	#overlay {
+		display: none;
+	}
+
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8 {
+		.md-block( {
+				display: none;
+			}
+
+		);
+
+		// &.visible.filtered{
+		// 	display: none !important;
+		// }
+
+		&.cell-day.visible {
+			.md-block( {
+					display: block;
+				}
+
+			);
+
+			.sheet__dayName{
+				.md-block({
+					border-right: none;
+				});
+			}
+
+			.sheet__disciple:last-child {
+				.md-block({
+					border-right: none;
+				});
+				
+			}
+
+		}
+		&.sheet__itemDaySkips.visible {
+			.md-block( {
+				display: flex;
+			});
+
+			.cell-skip:last-child {
+				.md-block( {
+					border-right: none;
+				});
+				
+			}
+		}
+	}
+
+	.col-999 {
+		.md-block( {
+			display: none;
+		});
+
+		&.visible{
+			.md-block({
+				display: flex;
+			});
+		}
+	}
+}
+
+#sheet__container {
+	position: relative;
+	margin-bottom: 15px;
+
+	.md-block( {
+			margin: 0 10px 10px 10px;
+		}
+
+	);
+}
+
+.sheet {
+	color: #2e2e2e;
+	overflow-x: auto;
+	padding-bottom: 15px;
+
+	&__sortRow {
+		display: inline-flex;
+		height: 50px;
+		border: 1px solid #8fa7c9;
+		border-radius: 5px;
+		font-size: 20px;
+
+		.md-block({
+			height: 30px;
+			font-size: 12px;
+		});
+
+		.sheet__cell {
+			cursor: pointer;
+			.noselect();
+		}
+
+		.cell-skips {
+			font-size: 20px !important;
+
+			.md-block({
+				font-size: 12px !important;
+			});
+		}
+	}
+
+	&__delimeter {
+		height: 15px;
+
+		.md-block( {
+				height: 10px;
+			}
+
+		);
+	}
+
+	&__content {
+		display: inline-flex;
+		flex-direction: column;
+	}
+
+	&__cell {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		border-right: 1px solid #8fa7c9;
+		box-sizing: border-box;
+		position: relative;
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	.cell-n {
+		width: 40px;
+		text-align: center;
+
+		.md-block({
+			width: 18px;
+		});
+	}
+
+	.cell-name {
+		width: 180px;
+		text-align: center;
+
+		.md-block({
+			width: 128px;
+		});
+	}
+
+	.cell-mid {
+		width: 1440px;
+
+		.md-block({
+			border-right: none;
+		});
+	}
+
+	.cell-skips {
+		width: 72px;
+		font-size: 15px;
+		font-weight: bold;
+
+		.md-block({
+			width: 50px;
+			font-size: 11px;
+		});
+	}
+
+	.cell-skip {
+		position: relative;
+		width: 30px;
+		cursor: pointer;
+		font-size: 12px;
+		color: #2e2e2e;
+
+		.md-block({
+			width: 18px;
+			font-size: 8px;
+		});
+
+		&.pp {
+			background-color: #acd373;
+
+			&::before {
+				content: 'ПП';
+			}
+		}
+
+		&.bp {
+			background-color: #d37373;
+
+			&::before {
+				content: 'БП';
+			}
+		}
+
+		&.sp {
+			background-color: #d3d073;
+
+			&::before {
+				content: 'СП';
+			}
+		}
+
+		&:last-child {
+			border-right: 1px solid #004a80;
+		}
+	}
+
+	//------------------------ Блок редактирования ячейки таблицы ------------------------
+	#cellEdit {
+		display: none;
+		position: absolute;
+		top: -1px;
+		height: 100%;
+		background-color: #f1f7ff;
+		border: 1px solid #8fa7c9;
+		box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.6);
+		z-index: 100;
+	}
+
+	.cellEdit {
+		&-right {
+			right: -1px;
+
+			.cellEditWrap {
+				flex-direction: row-reverse;
+			}
+
+			.cellEditFirstCell {
+				transform: rotate(90deg);
+			}
+
+			.cellEditCell {
+				border-left: 1px solid #8fa7c9;
+			}
+		}
+
+		&-left {
+			left: -1px;
+
+			.cellEditWrap {
+				flex-direction: row;
+			}
+
+			.cellEditFirstCell {
+				transform: rotate(-90deg);
+			}
+
+			.cellEditCell {
+				border-right: 1px solid #8fa7c9;
+			}
+		}
+	}
+
+	.cellEditWrap {
+		display: flex;
+	}
+
+	.cellEditCell {
+		width: 30px;
+		height: 31px;
+		border: none;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 30px;
+		font-size: 12px;
+		color: #2e2e2e;
+	}
+
+	.cellEditFirstCell {
+		width: 100%;
+		height: 100%;
+		background: url('/img/select_arrow.png') no-repeat center;
+	}
+
+	//-------------------------------------------------------------------------------
+	.sheet__disciple {
+		position: relative;
+
+		.rotated {
+			top: 119px;
+			left: -98px;
+			width: 225px;
+			text-align: initial;
+
+			.md-block({
+				width: 142px;
+				top: 70px;
+				left: -63px;
+			});
+		}
+	}
+
+	.cell-day {
+		&:last-child .sheet__disciple:last-child {
+			border-right: 1px solid #8fa7c9;
+		}
+
+		&.filtered {
+			display: none;
+		}
+	}
+
+	&__days {
+		display: flex;
+	}
+
+	.rotated {
+		position: absolute;
+		width: 250px;
+		transform: rotate(-90deg);
+		white-space: nowrap;
+		display: block;
+		text-align: center;
+
+		.md-block({
+			width: 180px;
+		});
+
+		&.center {
+			text-align: center;
+			text-transform: capitalize;
+		}
+	}
+
+	&__headRow {
+		display: flex;
+		border: 1px solid #8fa7c9;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+
+		.cell-n,
+		.cell-name {
+			font-size: 15px;
+			font-weight: bold;
+			padding: 10px;
+			box-sizing: border-box;
+			height: 304px;
+
+			.md-block({
+				font-size: 11px;
+				height: 185px;
+				padding: 5px;
+			});
+		}
+	}
+
+
+	&__dayName {
+		text-align: center;
+		padding: 5px;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 48px;
+		font-size: 15px;
+		font-weight: bold;
+		border-bottom: 1px solid #8fa7c9;
+		border-right: 1px solid #8fa7c9;
+
+		.md-block({
+			font-size: 11px;
+			height: 34px;
+		});
+	}
+
+	&__disciples {
+		display: flex;
+		// border-bottom: 1px solid #cedaea;
+	}
+
+	&__disciple {
+		width: 30px;
+		height: 256px;
+		border-right: 1px solid #8fa7c9;
+		font-size: 14px;
+
+		.md-block({
+			font-size: 10px;
+			height: 151px;
+			width: 18px;
+		});
+
+		&:last-child {
+			border-right: 1px solid #004a80;
+		}
+	}
+
+	.color-primary {
+		background-color: #bfcee5;
+	}
+
+	.color-secondary {
+		background-color: #cedaea;
+	}
+
+	&__itemRow {
+		display: flex;
+		border: 1px solid #8fa7c9;
+		border-top: none;
+		height: 30px;
+
+		.md-block({
+			height: 18px;
+		});
+
+		&:last-child {
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+
+		&.filtered {
+			display: none;
+		}
+
+		.cell-n,
+		.cell-name {
+			font-size: 14px;
+			box-sizing: border-box;
+
+			.md-block({
+				font-size: 10px;
+			});
+		}
+	}
+
+	&__itemDaySkips {
+		display: flex;
+
+		&:last-child .cell-skip:last-child {
+			border-right: 1px solid #8fa7c9;
+		}
+
+		&.filtered {
+			display: none;
+		}
+	}
+
+}
+
+.sheetSwitch {
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	color: #2e2e2e;
+	margin: 0 -5px 15px -5px;
+
+	.md-block( {
+			margin: 0 8px 10px 8px;
+		}
+
+	);
+
+	&__button {
+		background-color: #cedaea;
+		margin: 0 5px;
+		flex-grow: 1;
+		text-align: center;
+		border: 1px solid #bfcee5;
+		border-radius: 5px;
+		line-height: 38px;
+		cursor: pointer;
+		.noselect();
+
+		&-active {
+			background-color: #bfcee5;
+			border: 1px solid #8fa7c9;
+		}
+
+		.md-block( {
+				font-size: 8px;
+				margin: 0 2px;
+				line-height: 20px;
+			}
+
+		);
+	}
+}
+
+.btnEditDiscipleName {
+	position: absolute;
+	display: none;
+	.icon-edit();
+	background-size: 15px;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid #bfcee5;
+	background-color: #f1f7ff;
+	cursor: pointer;
+	.noselect();
+}
+
+.text-warning {
+	background-color: #ffc107;
+}
+
+.text-danger {
+	background-color: #dc3545;
+}
