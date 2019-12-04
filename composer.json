@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "phpoffice/phpspreadsheet": "^1.9"
+        "phpoffice/phpspreadsheet": "^1.9",
+        "laravel/nova": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
@@ -23,6 +24,12 @@
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
